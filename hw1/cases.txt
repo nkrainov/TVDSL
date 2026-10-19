@@ -1,0 +1,143 @@
+"" =>
+" " =>
+"\t" =>
+"\r\n" =>
+"  \t\r\n\t " =>
+
+"0" => INT(0)
+"7" => INT(7)
+"10" => INT(10)
+"1230" => INT(1230)
+"00" => INT(0) INT(0)
+"01" => INT(0) INT(1)
+"007" => INT(0) INT(0) INT(7)
+"0 1" => INT(0) INT(1)
+
+"x" => IDENT(x)
+"_" => IDENT(_)
+"_a1" => IDENT(_a1)
+"foo_bar_2" => IDENT(foo_bar_2)
+"A9" => IDENT(A9)
+"9a" => INT(9) IDENT(a)
+"a b" => IDENT(a) IDENT(b)
+
+"function" => KW_FUNCTION(function)
+"returns" => KW_RETURNS(returns)
+"while" => KW_WHILE(while)
+"if" => KW_IF(if)
+"else" => KW_ELSE(else)
+"assert" => KW_ASSERT(assert)
+"assume" => KW_ASSUME(assume)
+"invariant" => KW_INVARIANT(invariant)
+"length" => KW_LENGTH(length)
+"functions" => IDENT(functions)
+"function_1" => IDENT(function_1)
+"ifx" => IDENT(ifx)
+"iff" => IDENT(iff)
+"If" => IDENT(If)
+"fun" => IDENT(fun)
+"whilewhile" => IDENT(whilewhile)
+"ifasfhj" => IDENT(ifasfhj)
+"if x" => KW_IF(if) IDENT(x)
+"if(x)" => KW_IF(if) LPAREN(() IDENT(x) RPAREN())
+"assert_x assert" => IDENT(assert_x) KW_ASSERT(assert)
+
+"requires" => KW_REQUIRES(requires)
+"ensures" => KW_ENSURES(ensures)
+"uses" => KW_USES(uses)
+"forall" => KW_FORALL(forall)
+"exists" => KW_EXISTS(exists)
+"true" => KW_TRUE(true)
+"false" => KW_FALSE(false)
+"and" => KW_AND(and)
+"or" => KW_OR(or)
+"not" => KW_NOT(not)
+"int" => KW_INT(int)
+"integer" => IDENT(integer)
+"android" => IDENT(android)
+"order" => IDENT(order)
+"nothing" => IDENT(nothing)
+"not_x" => IDENT(not_x)
+"truex" => IDENT(truex)
+"Int" => IDENT(Int)
+"a and b or not c" => IDENT(a) KW_AND(and) IDENT(b) KW_OR(or) KW_NOT(not) IDENT(c)
+
+"(" => LPAREN(()
+")" => RPAREN())
+"[" => LBRACKET([)
+"]" => RBRACKET(])
+"{" => LBRACE({)
+"}" => RBRACE(})
+"," => COMMA(,)
+";" => SEMICOLON(;)
+"()[]{},;" => LPAREN(() RPAREN()) LBRACKET([) RBRACKET(]) LBRACE({) RBRACE(}) COMMA(,) SEMICOLON(;)
+
+":" => COLON(:)
+"|" => PIPE(|)
+"->" => ARROW(->)
+"=>" => FAT_ARROW(=>)
+"-->" => MINUS(-) ARROW(->)
+"<-" => LT(<) MINUS(-)
+"=>=" => FAT_ARROW(=>) ASSIGN(=)
+"==>" => EQ(==) GT(>)
+"||" => PIPE(|) PIPE(|)
+"a|b" => IDENT(a) PIPE(|) IDENT(b)
+"a->b" => IDENT(a) ARROW(->) IDENT(b)
+"a:int" => IDENT(a) COLON(:) KW_INT(int)
+
+"+" => PLUS(+)
+"-" => MINUS(-)
+"*" => STAR(*)
+"/" => SLASH(/)
+"+ - * /" => PLUS(+) MINUS(-) STAR(*) SLASH(/)
+"==" => EQ(==)
+"!=" => NE(!=)
+"<=" => LE(<=)
+">=" => GE(>=)
+"=" => ASSIGN(=)
+"<" => LT(<)
+">" => GT(>)
+"===" => EQ(==) ASSIGN(=)
+"====" => EQ(==) EQ(==)
+"<=<" => LE(<=) LT(<)
+">=>" => GE(>=) GT(>)
+"=>" => FAT_ARROW(=>)
+"<>" => LT(<) GT(>)
+"a<=b" => IDENT(a) LE(<=) IDENT(b)
+"a!=b" => IDENT(a) NE(!=) IDENT(b)
+"a-b" => IDENT(a) MINUS(-) IDENT(b)
+"a/b" => IDENT(a) SLASH(/) IDENT(b)
+"/ /" => SLASH(/) SLASH(/)
+
+"//" =>
+"///" =>
+"// text" =>
+"//text\n" =>
+"// ()[]{} == 123 function" =>
+"a // c\nb" => IDENT(a) IDENT(b)
+"x //c\r\ny" => IDENT(x) IDENT(y)
+"/a" => SLASH(/) IDENT(a)
+"a//" => IDENT(a)
+"// a\rb" => IDENT(b)
+
+"!" => ERROR@0 1:1
+"!!=" => ERROR@0 1:1
+"a ! b" => IDENT(a) ERROR@2 1:3
+"@" => ERROR@0 1:1
+"a@" => IDENT(a) ERROR@1 1:2
+"\t@" => ERROR@1 1:2
+"a\n@" => IDENT(a) ERROR@2 2:1
+"a\n\n  @" => IDENT(a) ERROR@5 3:3
+"x = 1;\ny = #" => IDENT(x) ASSIGN(=) INT(1) SEMICOLON(;) IDENT(y) ASSIGN(=) ERROR@11 2:5
+"\\" => ERROR@0 1:1
+"\"" => ERROR@0 1:1
+"\x00" => ERROR@0 1:1
+"\x01" => ERROR@0 1:1
+"\x7f" => ERROR@0 1:1
+
+
+"function f(a: int[]) returns (r: int) requires length(a) > 0 { }" => KW_FUNCTION(function) IDENT(f) LPAREN(() IDENT(a) COLON(:) KW_INT(int) LBRACKET([) RBRACKET(]) RPAREN()) KW_RETURNS(returns) LPAREN(() IDENT(r) COLON(:) KW_INT(int) RPAREN()) KW_REQUIRES(requires) KW_LENGTH(length) LPAREN(() IDENT(a) RPAREN()) GT(>) INT(0) LBRACE({) RBRACE(})
+"function f(a, b) returns int { x = a + b; }" => KW_FUNCTION(function) IDENT(f) LPAREN(() IDENT(a) COMMA(,) IDENT(b) RPAREN()) KW_RETURNS(returns) KW_INT(int) LBRACE({) IDENT(x) ASSIGN(=) IDENT(a) PLUS(+) IDENT(b) SEMICOLON(;) RBRACE(})
+"while (i <= n) { i = i + 1; }" => KW_WHILE(while) LPAREN(() IDENT(i) LE(<=) IDENT(n) RPAREN()) LBRACE({) IDENT(i) ASSIGN(=) IDENT(i) PLUS(+) INT(1) SEMICOLON(;) RBRACE(})
+"a[i] = a[i] + 1;" => IDENT(a) LBRACKET([) IDENT(i) RBRACKET(]) ASSIGN(=) IDENT(a) LBRACKET([) IDENT(i) RBRACKET(]) PLUS(+) INT(1) SEMICOLON(;)
+"assert length(a) >= 0;" => KW_ASSERT(assert) KW_LENGTH(length) LPAREN(() IDENT(a) RPAREN()) GE(>=) INT(0) SEMICOLON(;)
