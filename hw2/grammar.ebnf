@@ -1,0 +1,62 @@
+program        = definition { definition } EOF ;
+
+definition     = "function" IDENT params functionRest
+               | IDENT params ( "=>" expr                
+                              | functionRest ) ;
+
+params         = "(" [ variableDef { "," variableDef } ] ")" ;
+
+functionRest   = [ "requires" expr ]               
+                 "returns" variableDef { "," variableDef }
+                 [ "ensures" expr ]                
+                 [ "uses" localVarDef { "," localVarDef } ]
+                 statement ;
+
+variableDef    = IDENT ":" variableType ;
+localVarDef    = IDENT [ ":" variableType ] ;      
+variableType   = "int" [ "[" "]" ] ;               
+
+statement      = assignment
+               | conditional
+               | loop
+               | block
+               | assertStmt
+               | assumeStmt ;
+
+assignment     = IDENT assignmentRest ;
+assignmentRest = indices "=" expr ";"
+               | { "," IDENT } "=" expr ";" ;
+
+indices        = "[" expr "]" { "[" expr "]" } ;  
+
+conditional    = "if" "(" expr ")" statement [ "else" statement ] ;
+                 (* "else" относится к ближайшему "if" *)
+
+loop           = "while" "(" expr ")" [ "invariant" expr ] statement ;
+                 (* инвариант по умолчанию true *)
+
+block          = "{" { statement } "}" ;
+assertStmt     = "assert" expr ";" ;
+assumeStmt     = "assume" expr ";" ;
+
+
+expr           = implication ;
+implication    = disjunction [ "->" implication ] ;                 
+disjunction    = conjunction { "or" conjunction } ;
+conjunction    = negation { "and" negation } ;
+negation       = "not" negation | comparison ;
+comparison     = additive [ relOp additive ] ;                      
+relOp          = "==" | "!=" | "<" | "<=" | ">" | ">=" ;
+additive       = multiplicative { ( "+" | "-" ) multiplicative } ;  
+multiplicative = unary { ( "*" | "/" ) unary } ;                    
+unary          = "-" unary | primary ;
+
+primary        = INT
+               | "true" | "false"
+               | IDENT [ callArgs | indices ]                       
+               | "length" callArgs                                  
+               | quantifier
+               | "(" expr ")" ;
+
+callArgs       = "(" [ expr { "," expr } ] ")" ;
+quantifier     = ( "forall" | "exists" ) "(" variableDef "|" expr ")" ;

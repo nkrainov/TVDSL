@@ -1,0 +1,402 @@
+nfa
+states 295
+start 0
+rules 47
+rule 0 KW_FUNCTION skip=0
+rule 1 KW_RETURNS skip=0
+rule 2 KW_REQUIRES skip=0
+rule 3 KW_ENSURES skip=0
+rule 4 KW_USES skip=0
+rule 5 KW_IF skip=0
+rule 6 KW_ELSE skip=0
+rule 7 KW_WHILE skip=0
+rule 8 KW_INVARIANT skip=0
+rule 9 KW_ASSERT skip=0
+rule 10 KW_ASSUME skip=0
+rule 11 KW_FORALL skip=0
+rule 12 KW_EXISTS skip=0
+rule 13 KW_TRUE skip=0
+rule 14 KW_FALSE skip=0
+rule 15 KW_AND skip=0
+rule 16 KW_OR skip=0
+rule 17 KW_NOT skip=0
+rule 18 KW_INT skip=0
+rule 19 KW_LENGTH skip=0
+rule 20 INT skip=0
+rule 21 IDENT skip=0
+rule 22 WS skip=1
+rule 23 COMMENT skip=1
+rule 24 LPAREN skip=0
+rule 25 RPAREN skip=0
+rule 26 LBRACKET skip=0
+rule 27 RBRACKET skip=0
+rule 28 LBRACE skip=0
+rule 29 RBRACE skip=0
+rule 30 COMMA skip=0
+rule 31 COLON skip=0
+rule 32 SEMICOLON skip=0
+rule 33 ARROW skip=0
+rule 34 FAT_ARROW skip=0
+rule 35 PLUS skip=0
+rule 36 MINUS skip=0
+rule 37 STAR skip=0
+rule 38 SLASH skip=0
+rule 39 EQ skip=0
+rule 40 NE skip=0
+rule 41 LE skip=0
+rule 42 GE skip=0
+rule 43 LT skip=0
+rule 44 GT skip=0
+rule 45 ASSIGN skip=0
+rule 46 PIPE skip=0
+accepts 47
+accept 16 0
+accept 30 1
+accept 46 2
+accept 60 3
+accept 68 4
+accept 72 5
+accept 80 6
+accept 90 7
+accept 108 8
+accept 120 9
+accept 132 10
+accept 144 11
+accept 156 12
+accept 164 13
+accept 174 14
+accept 180 15
+accept 184 16
+accept 190 17
+accept 196 18
+accept 208 19
+accept 210 20
+accept 224 21
+accept 228 22
+accept 236 23
+accept 238 24
+accept 240 25
+accept 242 26
+accept 244 27
+accept 246 28
+accept 248 29
+accept 250 30
+accept 252 31
+accept 254 32
+accept 258 33
+accept 262 34
+accept 264 35
+accept 266 36
+accept 268 37
+accept 270 38
+accept 274 39
+accept 278 40
+accept 282 41
+accept 286 42
+accept 288 43
+accept 290 44
+accept 292 45
+accept 294 46
+edges 302
+edge 0 eps 1
+edge 0 eps 17
+edge 0 eps 31
+edge 0 eps 47
+edge 0 eps 61
+edge 0 eps 69
+edge 0 eps 73
+edge 0 eps 81
+edge 0 eps 91
+edge 0 eps 109
+edge 0 eps 121
+edge 0 eps 133
+edge 0 eps 145
+edge 0 eps 157
+edge 0 eps 165
+edge 0 eps 175
+edge 0 eps 181
+edge 0 eps 185
+edge 0 eps 191
+edge 0 eps 197
+edge 0 eps 209
+edge 0 eps 219
+edge 0 eps 225
+edge 0 eps 229
+edge 0 eps 237
+edge 0 eps 239
+edge 0 eps 241
+edge 0 eps 243
+edge 0 eps 245
+edge 0 eps 247
+edge 0 eps 249
+edge 0 eps 251
+edge 0 eps 253
+edge 0 eps 255
+edge 0 eps 259
+edge 0 eps 263
+edge 0 eps 265
+edge 0 eps 267
+edge 0 eps 269
+edge 0 eps 271
+edge 0 eps 275
+edge 0 eps 279
+edge 0 eps 283
+edge 0 eps 287
+edge 0 eps 289
+edge 0 eps 291
+edge 0 eps 293
+edge 1 [102] 2
+edge 2 eps 3
+edge 3 [117] 4
+edge 4 eps 5
+edge 5 [110] 6
+edge 6 eps 7
+edge 7 [99] 8
+edge 8 eps 9
+edge 9 [116] 10
+edge 10 eps 11
+edge 11 [105] 12
+edge 12 eps 13
+edge 13 [111] 14
+edge 14 eps 15
+edge 15 [110] 16
+edge 17 [114] 18
+edge 18 eps 19
+edge 19 [101] 20
+edge 20 eps 21
+edge 21 [116] 22
+edge 22 eps 23
+edge 23 [117] 24
+edge 24 eps 25
+edge 25 [114] 26
+edge 26 eps 27
+edge 27 [110] 28
+edge 28 eps 29
+edge 29 [115] 30
+edge 31 [114] 32
+edge 32 eps 33
+edge 33 [101] 34
+edge 34 eps 35
+edge 35 [113] 36
+edge 36 eps 37
+edge 37 [117] 38
+edge 38 eps 39
+edge 39 [105] 40
+edge 40 eps 41
+edge 41 [114] 42
+edge 42 eps 43
+edge 43 [101] 44
+edge 44 eps 45
+edge 45 [115] 46
+edge 47 [101] 48
+edge 48 eps 49
+edge 49 [110] 50
+edge 50 eps 51
+edge 51 [115] 52
+edge 52 eps 53
+edge 53 [117] 54
+edge 54 eps 55
+edge 55 [114] 56
+edge 56 eps 57
+edge 57 [101] 58
+edge 58 eps 59
+edge 59 [115] 60
+edge 61 [117] 62
+edge 62 eps 63
+edge 63 [115] 64
+edge 64 eps 65
+edge 65 [101] 66
+edge 66 eps 67
+edge 67 [115] 68
+edge 69 [105] 70
+edge 70 eps 71
+edge 71 [102] 72
+edge 73 [101] 74
+edge 74 eps 75
+edge 75 [108] 76
+edge 76 eps 77
+edge 77 [115] 78
+edge 78 eps 79
+edge 79 [101] 80
+edge 81 [119] 82
+edge 82 eps 83
+edge 83 [104] 84
+edge 84 eps 85
+edge 85 [105] 86
+edge 86 eps 87
+edge 87 [108] 88
+edge 88 eps 89
+edge 89 [101] 90
+edge 91 [105] 92
+edge 92 eps 93
+edge 93 [110] 94
+edge 94 eps 95
+edge 95 [118] 96
+edge 96 eps 97
+edge 97 [97] 98
+edge 98 eps 99
+edge 99 [114] 100
+edge 100 eps 101
+edge 101 [105] 102
+edge 102 eps 103
+edge 103 [97] 104
+edge 104 eps 105
+edge 105 [110] 106
+edge 106 eps 107
+edge 107 [116] 108
+edge 109 [97] 110
+edge 110 eps 111
+edge 111 [115] 112
+edge 112 eps 113
+edge 113 [115] 114
+edge 114 eps 115
+edge 115 [101] 116
+edge 116 eps 117
+edge 117 [114] 118
+edge 118 eps 119
+edge 119 [116] 120
+edge 121 [97] 122
+edge 122 eps 123
+edge 123 [115] 124
+edge 124 eps 125
+edge 125 [115] 126
+edge 126 eps 127
+edge 127 [117] 128
+edge 128 eps 129
+edge 129 [109] 130
+edge 130 eps 131
+edge 131 [101] 132
+edge 133 [102] 134
+edge 134 eps 135
+edge 135 [111] 136
+edge 136 eps 137
+edge 137 [114] 138
+edge 138 eps 139
+edge 139 [97] 140
+edge 140 eps 141
+edge 141 [108] 142
+edge 142 eps 143
+edge 143 [108] 144
+edge 145 [101] 146
+edge 146 eps 147
+edge 147 [120] 148
+edge 148 eps 149
+edge 149 [105] 150
+edge 150 eps 151
+edge 151 [115] 152
+edge 152 eps 153
+edge 153 [116] 154
+edge 154 eps 155
+edge 155 [115] 156
+edge 157 [116] 158
+edge 158 eps 159
+edge 159 [114] 160
+edge 160 eps 161
+edge 161 [117] 162
+edge 162 eps 163
+edge 163 [101] 164
+edge 165 [102] 166
+edge 166 eps 167
+edge 167 [97] 168
+edge 168 eps 169
+edge 169 [108] 170
+edge 170 eps 171
+edge 171 [115] 172
+edge 172 eps 173
+edge 173 [101] 174
+edge 175 [97] 176
+edge 176 eps 177
+edge 177 [110] 178
+edge 178 eps 179
+edge 179 [100] 180
+edge 181 [111] 182
+edge 182 eps 183
+edge 183 [114] 184
+edge 185 [110] 186
+edge 186 eps 187
+edge 187 [111] 188
+edge 188 eps 189
+edge 189 [116] 190
+edge 191 [105] 192
+edge 192 eps 193
+edge 193 [110] 194
+edge 194 eps 195
+edge 195 [116] 196
+edge 197 [108] 198
+edge 198 eps 199
+edge 199 [101] 200
+edge 200 eps 201
+edge 201 [110] 202
+edge 202 eps 203
+edge 203 [103] 204
+edge 204 eps 205
+edge 205 [116] 206
+edge 206 eps 207
+edge 207 [104] 208
+edge 209 eps 211
+edge 209 eps 213
+edge 211 [48] 212
+edge 212 eps 210
+edge 213 [49-57] 214
+edge 214 eps 215
+edge 215 eps 216
+edge 215 eps 218
+edge 216 [48-57] 217
+edge 217 eps 216
+edge 217 eps 218
+edge 218 eps 210
+edge 219 [65-90,95,97-122] 220
+edge 220 eps 221
+edge 221 eps 222
+edge 221 eps 224
+edge 222 [48-57,65-90,95,97-122] 223
+edge 223 eps 222
+edge 223 eps 224
+edge 225 eps 226
+edge 226 [9-10,13,32] 227
+edge 227 eps 226
+edge 227 eps 228
+edge 229 [47] 230
+edge 230 eps 231
+edge 231 [47] 232
+edge 232 eps 233
+edge 233 eps 234
+edge 233 eps 236
+edge 234 [0-9,11-12,14-127] 235
+edge 235 eps 234
+edge 235 eps 236
+edge 237 [40] 238
+edge 239 [41] 240
+edge 241 [91] 242
+edge 243 [93] 244
+edge 245 [123] 246
+edge 247 [125] 248
+edge 249 [44] 250
+edge 251 [58] 252
+edge 253 [59] 254
+edge 255 [45] 256
+edge 256 eps 257
+edge 257 [62] 258
+edge 259 [61] 260
+edge 260 eps 261
+edge 261 [62] 262
+edge 263 [43] 264
+edge 265 [45] 266
+edge 267 [42] 268
+edge 269 [47] 270
+edge 271 [61] 272
+edge 272 eps 273
+edge 273 [61] 274
+edge 275 [33] 276
+edge 276 eps 277
+edge 277 [61] 278
+edge 279 [60] 280
+edge 280 eps 281
+edge 281 [61] 282
+edge 283 [62] 284
+edge 284 eps 285
+edge 285 [61] 286
+edge 287 [60] 288
+edge 289 [62] 290
+edge 291 [61] 292
+edge 293 [124] 294
