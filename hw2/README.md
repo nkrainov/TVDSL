@@ -17,7 +17,7 @@
 `
 
 Пример вывода для примера из example.funny
-`
+```
 function minmax(a: int[]) returns (mn: int, mx: int)
   requires (> (call length a) 0)
   block
@@ -40,10 +40,10 @@ function normalize(a: int[]) returns (b: int[])
       block
         assign b[0] = mn
         assign b[1] = mx
-`
+```
 
 Если там специально оставить ошибку (убрать ;), то вывод будет примерно такой:
-`
+```
 example.funny:15:5: error: expected ';', got 'if'
 function minmax(a: int[]) returns (mn: int, mx: int)
   requires (> (call length a) 0)
@@ -67,4 +67,4 @@ function normalize(a: int[]) returns (b: int[])
       block
         assign b[0] = mn
         assign b[1] = mx
-`
+```
